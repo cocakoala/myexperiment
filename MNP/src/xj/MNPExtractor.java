@@ -17,9 +17,9 @@ import java.io.IOException;
  */
 public class MNPExtractor {
 
-	public static String inPath = "/home/xj/Documents/experiment/testdata/test.tree";
-	public static String mnpPath = "/home/xj/Documents/experiment/result/130427/MNPExracted";
-	public static String outPath = "/home/xj/Documents/experiment/result/130427/skeleton";
+	public static String inPath = "/home/xj/Documents/experiment/testdata/test.tree.filtered";
+	public static String mnpPath = "/home/xj/Documents/experiment/result/130428/MNPExtracted.withBlankLine";
+	public static String outPath = "/home/xj/Documents/experiment/result/130428/skeleton";
 
 	public static int wordCt = 0;
 	public static int wordCtAfterExtract = 0;
