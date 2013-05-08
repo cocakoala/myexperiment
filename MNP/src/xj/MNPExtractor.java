@@ -17,9 +17,9 @@ import java.io.IOException;
  */
 public class MNPExtractor {
 
-	public static String inPath = "/home/xj/Documents/experiment/testdata/test.tree.filtered";
-	public static String mnpPath = "/home/xj/Documents/experiment/result/130428/MNPExtracted.withBlankLine";
-	public static String outPath = "/home/xj/Documents/experiment/result/130428/skeleton";
+	public static String inPath = "/home/xj/Documents/myexperiment/050713/tree0_20";
+	public static String mnpPath = "/home/xj/Documents/experiment/130507/mnp0_20.withBlankLine";
+	public static String outPath = "/home/xj/Documents/experiment/130507/skeleton0_20";
 
 	public static int wordCt = 0;
 	public static int wordCtAfterExtract = 0;
@@ -41,7 +41,7 @@ public class MNPExtractor {
 				//
 //				 System.err.println(tmpStr);
 				//
-//				extractOut.write(sentId + "\n");
+				extractOut.write(sentId + "\n");
 				++ sentId;
 				String[] sents = sentPair.split(" \\p{Punct}{4}  \\p{Punct}{4} ");
 				if (sents.length < 2) {
@@ -109,8 +109,8 @@ public class MNPExtractor {
 			}
 			
 			extractOut.write("\n\nTotally " + mnpCt + " phrases\n");
-			extractOut.write("\nBefore extraction, " + (wordCt/1000.0) + " words per sentence.");
-			extractOut.write("\nAfter extraction, " + (wordCtAfterExtract/1000.0) + " words per sentence.");
+			extractOut.write("\nBefore extraction, " + (1.0*wordCt/(sentId-1)) + " words per sentence.");
+			extractOut.write("\nAfter extraction, " + (1.0*wordCtAfterExtract/(sentId-1)) + " words per sentence.");
 			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

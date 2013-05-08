@@ -1,0 +1,6 @@
+xj@xj-BIT:~/Documents/myexperiment/050713$ time java -jar BerkeleyParser-1.7.jar -gr chn_sm5.gr -inputFile mnp20_40 > mnp20_40.parse 
+
+real	1m5.544s
+user	1m13.724s
+sys	0m0.640s
+xj@xj-BIT:~/Documents/myexperiment/050713$ 

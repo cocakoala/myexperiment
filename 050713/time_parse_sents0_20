@@ -1,0 +1,6 @@
+xj@xj-BIT:~/Documents/myexperiment/050713$ time java -jar BerkeleyParser-1.7.jar -gr chn_sm5.gr -inputFile sents0_20 > sents0_20.parse
+
+real	0m38.220s
+user	0m45.564s
+sys	0m0.600s
+xj@xj-BIT:~/Documents/myexperiment/050713$ 
