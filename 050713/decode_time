@@ -1,0 +1,389 @@
+##
+## decode the original sentences
+##
+
+xj@xj-BIT:~/NiuTrans_1.2.0.Beta/scripts$ time perl NiuTrans-syntax-decoder-model.pl -model t2s -config ../work/NiuTrans.syntax.t2s.user.config -test ~/Documents/myexperiment/050713/tree0_20 -output ~/Documents/myexperiment/050713/orig_trans0_20
+########### SCRIPT ########### SCRIPT ############ SCRIPT ##########
+#                                                                  #
+#  NiuTrans Syntax Decoding (version 1.0.0 Beta) --www.nlplab.com  #
+#                                                                  #
+########### SCRIPT ########### SCRIPT ############ SCRIPT ##########
+../bin/NiuTrans.Decoder -decoding /home/xj/Documents/myexperiment/050713/tree0_20 -config ../work/NiuTrans.syntax.t2s.user.config -output /home/xj/Documents/myexperiment/050713/orig_trans0_20 -scfg -outputoov 1 -nbest 1 -nthread 4 -syntax -tree2string -treeparsing -replacefoctoid 1 
+Running: ../bin/NiuTrans.Decoder -decoding /home/xj/Documents/myexperiment/050713/tree0_20 -config ../work/NiuTrans.syntax.t2s.user.config -output /home/xj/Documents/myexperiment/050713/orig_trans0_20 -scfg -outputoov 1 -nbest 1 -nthread 4 -syntax -tree2string -treeparsing -replacefoctoid 1 
+
+#####################################################################
+#   Welcome to NiuTrans' world (version 1.0)  --   www.nlplab.com   #
+#####################################################################
+
+Loading system settings
+  >> From command-line ...
+  >> From File: ../work/NiuTrans.syntax.t2s.user.config ...
+Done [0.01 sec(s)]
+Loading Punctuations
+  >> From File: ../resource/punct.utf8.txt ...
+  >> #
+Done [8 entries, 0.011 sec(s)]
+Loading Ngram-LanguageModel-File
+  >> From File: ../work/lm/lm.trie.data ...
+  >> 
+Done [0.521 sec(s)]
+Loading Target-Vocab-File
+  >> From File: ../work/lm/lm.vocab ...
+  >> .
+Done [35028 entries, 0.018 sec(s)]
+Loading SCFG-Rule-Set
+  >> From File: ../work/model.syntax.t2s/syntax.tree2string.rule.bina ...
+  >> ..
+Done [993K entries, 1K invalid rules, 481MB memory, 7.773 sec(s)]
+Sorting rules ... [333K entries, done]
+sentence 346 thread 0 [elapsed: 9.48s, speed: 36.49sent/s, failure: 1] 
+dumping the decoding results ... [done]
+
+real	0m21.506s
+user	0m37.232s
+sys	0m3.408s
+xj@xj-BIT:~/NiuTrans_1.2.0.Beta/scripts$ 
+
+xj@xj-BIT:~/NiuTrans_1.2.0.Beta/scripts$ time perl NiuTrans-syntax-decoder-model.pl -model t2s -config ../work/NiuTrans.syntax.t2s.user.config -test ~/Documents/myexperiment/050713/tree20_40 -output ~/Documents/myexperiment/050713/orig_trans20_40
+########### SCRIPT ########### SCRIPT ############ SCRIPT ##########
+#                                                                  #
+#  NiuTrans Syntax Decoding (version 1.0.0 Beta) --www.nlplab.com  #
+#                                                                  #
+########### SCRIPT ########### SCRIPT ############ SCRIPT ##########
+../bin/NiuTrans.Decoder -decoding /home/xj/Documents/myexperiment/050713/tree20_40 -config ../work/NiuTrans.syntax.t2s.user.config -output /home/xj/Documents/myexperiment/050713/orig_trans20_40 -scfg -outputoov 1 -nbest 1 -nthread 4 -syntax -tree2string -treeparsing -replacefoctoid 1 
+Running: ../bin/NiuTrans.Decoder -decoding /home/xj/Documents/myexperiment/050713/tree20_40 -config ../work/NiuTrans.syntax.t2s.user.config -output /home/xj/Documents/myexperiment/050713/orig_trans20_40 -scfg -outputoov 1 -nbest 1 -nthread 4 -syntax -tree2string -treeparsing -replacefoctoid 1 
+
+#####################################################################
+#   Welcome to NiuTrans' world (version 1.0)  --   www.nlplab.com   #
+#####################################################################
+
+Loading system settings
+  >> From command-line ...
+  >> From File: ../work/NiuTrans.syntax.t2s.user.config ...
+Done [0.00 sec(s)]
+Loading Punctuations
+  >> From File: ../resource/punct.utf8.txt ...
+  >> #
+Done [8 entries, 0.005 sec(s)]
+Loading Ngram-LanguageModel-File
+  >> From File: ../work/lm/lm.trie.data ...
+  >> 
+Done [0.487 sec(s)]
+Loading Target-Vocab-File
+  >> From File: ../work/lm/lm.vocab ...
+  >> .
+Done [35028 entries, 0.018 sec(s)]
+Loading SCFG-Rule-Set
+  >> From File: ../work/model.syntax.t2s/syntax.tree2string.rule.bina ...
+  >> ..
+Done [993K entries, 1K invalid rules, 481MB memory, 7.764 sec(s)]
+Sorting rules ... [333K entries, done]
+sentence 511 thread 0 [elapsed: 29.43s, speed: 17.36sent/s, failure: 0] 
+dumping the decoding results ... [done]
+
+real  0m41.441s
+user  1m48.420s
+sys 0m3.816s
+xj@xj-BIT:~/NiuTrans_1.2.0.Beta/scripts$ 
+
+xj@xj-BIT:~/NiuTrans_1.2.0.Beta/scripts$ time perl NiuTrans-syntax-decoder-model.pl -model t2s -config ../work/NiuTrans.syntax.t2s.user.config -test ~/Documents/myexperiment/050713/tree40_ -output ~/Documents/myexperiment/050713/orig_trans40_
+########### SCRIPT ########### SCRIPT ############ SCRIPT ##########
+#                                                                  #
+#  NiuTrans Syntax Decoding (version 1.0.0 Beta) --www.nlplab.com  #
+#                                                                  #
+########### SCRIPT ########### SCRIPT ############ SCRIPT ##########
+../bin/NiuTrans.Decoder -decoding /home/xj/Documents/myexperiment/050713/tree40_ -config ../work/NiuTrans.syntax.t2s.user.config -output /home/xj/Documents/myexperiment/050713/orig_trans40_ -scfg -outputoov 1 -nbest 1 -nthread 4 -syntax -tree2string -treeparsing -replacefoctoid 1 
+Running: ../bin/NiuTrans.Decoder -decoding /home/xj/Documents/myexperiment/050713/tree40_ -config ../work/NiuTrans.syntax.t2s.user.config -output /home/xj/Documents/myexperiment/050713/orig_trans40_ -scfg -outputoov 1 -nbest 1 -nthread 4 -syntax -tree2string -treeparsing -replacefoctoid 1 
+
+#####################################################################
+#   Welcome to NiuTrans' world (version 1.0)  --   www.nlplab.com   #
+#####################################################################
+
+Loading system settings
+  >> From command-line ...
+  >> From File: ../work/NiuTrans.syntax.t2s.user.config ...
+Done [0.01 sec(s)]
+Loading Punctuations
+  >> From File: ../resource/punct.utf8.txt ...
+  >> #
+Done [8 entries, 0.005 sec(s)]
+Loading Ngram-LanguageModel-File
+  >> From File: ../work/lm/lm.trie.data ...
+  >> 
+Done [0.522 sec(s)]
+Loading Target-Vocab-File
+  >> From File: ../work/lm/lm.vocab ...
+  >> .
+Done [35028 entries, 0.018 sec(s)]
+Loading SCFG-Rule-Set
+  >> From File: ../work/model.syntax.t2s/syntax.tree2string.rule.bina ...
+  >> ..
+Done [993K entries, 1K invalid rules, 481MB memory, 7.789 sec(s)]
+Sorting rules ... [333K entries, done]
+sentence 81 thread 1 [elapsed: 8.56s, speed: 9.46sent/s, failure: 0] 
+dumping the decoding results ... [done]
+
+real  0m21.693s
+user  0m35.012s
+sys 0m3.492s
+xj@xj-BIT:~/NiuTrans_1.2.0.Beta/scripts$ 
+
+##
+## decode MNP
+##
+
+xj@xj-BIT:~/NiuTrans_1.2.0.Beta/scripts$ time perl NiuTrans-syntax-decoder-model.pl -model t2s -config ../work/NiuTrans.syntax.t2s.user.config -test ~/Documents/myexperiment/050713/mnpTree0_20 -output ~/Documents/myexperiment/050713/mnp_trans0_20
+########### SCRIPT ########### SCRIPT ############ SCRIPT ##########
+#                                                                  #
+#  NiuTrans Syntax Decoding (version 1.0.0 Beta) --www.nlplab.com  #
+#                                                                  #
+########### SCRIPT ########### SCRIPT ############ SCRIPT ##########
+../bin/NiuTrans.Decoder -decoding /home/xj/Documents/myexperiment/050713/mnpTree0_20 -config ../work/NiuTrans.syntax.t2s.user.config -output /home/xj/Documents/myexperiment/050713/mnp_trans0_20 -scfg -outputoov 1 -nbest 1 -nthread 4 -syntax -tree2string -treeparsing -replacefoctoid 1 
+Running: ../bin/NiuTrans.Decoder -decoding /home/xj/Documents/myexperiment/050713/mnpTree0_20 -config ../work/NiuTrans.syntax.t2s.user.config -output /home/xj/Documents/myexperiment/050713/mnp_trans0_20 -scfg -outputoov 1 -nbest 1 -nthread 4 -syntax -tree2string -treeparsing -replacefoctoid 1 
+
+#####################################################################
+#   Welcome to NiuTrans' world (version 1.0)  --   www.nlplab.com   #
+#####################################################################
+
+Loading system settings
+  >> From command-line ...
+  >> From File: ../work/NiuTrans.syntax.t2s.user.config ...
+Done [0.00 sec(s)]
+Loading Punctuations
+  >> From File: ../resource/punct.utf8.txt ...
+  >> #
+Done [8 entries, 0.000 sec(s)]
+Loading Ngram-LanguageModel-File
+  >> From File: ../work/lm/lm.trie.data ...
+  >> 
+Done [0.066 sec(s)]
+Loading Target-Vocab-File
+  >> From File: ../work/lm/lm.vocab ...
+  >> .
+Done [35028 entries, 0.018 sec(s)]
+Loading SCFG-Rule-Set
+  >> From File: ../work/model.syntax.t2s/syntax.tree2string.rule.bina ...
+  >> ..
+Done [993K entries, 1K invalid rules, 481MB memory, 7.584 sec(s)]
+Sorting rules ... [333K entries, done]
+sentence 536 thread 3 [elapsed: 5.08s, speed: 105.48sent/s, failure: 1] 
+dumping the decoding results ... [done]
+
+real  0m16.067s
+user  0m22.176s
+sys 0m3.324s
+xj@xj-BIT:~/NiuTrans_1.2.0.Beta/scripts$ 
+
+xj@xj-BIT:~/NiuTrans_1.2.0.Beta/scripts$ time perl NiuTrans-syntax-decoder-model.pl -model t2s -config ../work/NiuTrans.syntax.t2s.user.config -test ~/Documents/myexperiment/050713/mnpTree20_40 -output ~/Documents/myexperiment/050713/mnp_trans20_40
+########### SCRIPT ########### SCRIPT ############ SCRIPT ##########
+#                                                                  #
+#  NiuTrans Syntax Decoding (version 1.0.0 Beta) --www.nlplab.com  #
+#                                                                  #
+########### SCRIPT ########### SCRIPT ############ SCRIPT ##########
+../bin/NiuTrans.Decoder -decoding /home/xj/Documents/myexperiment/050713/mnpTree20_40 -config ../work/NiuTrans.syntax.t2s.user.config -output /home/xj/Documents/myexperiment/050713/mnp_trans20_40 -scfg -outputoov 1 -nbest 1 -nthread 4 -syntax -tree2string -treeparsing -replacefoctoid 1 
+Running: ../bin/NiuTrans.Decoder -decoding /home/xj/Documents/myexperiment/050713/mnpTree20_40 -config ../work/NiuTrans.syntax.t2s.user.config -output /home/xj/Documents/myexperiment/050713/mnp_trans20_40 -scfg -outputoov 1 -nbest 1 -nthread 4 -syntax -tree2string -treeparsing -replacefoctoid 1 
+
+#####################################################################
+#   Welcome to NiuTrans' world (version 1.0)  --   www.nlplab.com   #
+#####################################################################
+
+Loading system settings
+  >> From command-line ...
+  >> From File: ../work/NiuTrans.syntax.t2s.user.config ...
+Done [0.00 sec(s)]
+Loading Punctuations
+  >> From File: ../resource/punct.utf8.txt ...
+  >> #
+Done [8 entries, 0.009 sec(s)]
+Loading Ngram-LanguageModel-File
+  >> From File: ../work/lm/lm.trie.data ...
+  >> 
+Done [0.499 sec(s)]
+Loading Target-Vocab-File
+  >> From File: ../work/lm/lm.vocab ...
+  >> .
+Done [35028 entries, 0.018 sec(s)]
+Loading SCFG-Rule-Set
+  >> From File: ../work/model.syntax.t2s/syntax.tree2string.rule.bina ...
+  >> ..
+Done [993K entries, 1K invalid rules, 481MB memory, 7.579 sec(s)]
+Sorting rules ... [333K entries, done]
+sentence 1378 thread 1 [elapsed: 17.00s, speed: 81.05sent/s, failure: 0] 
+dumping the decoding results ... [done]
+
+real  0m28.619s
+user  1m1.408s
+sys 0m3.332s
+xj@xj-BIT:~/NiuTrans_1.2.0.Beta/scripts
+
+xj@xj-BIT:~/NiuTrans_1.2.0.Beta/scripts$ time perl NiuTrans-syntax-decoder-model.pl -model t2s -config ../work/NiuTrans.syntax.t2s.user.config -test ~/Documents/myexperiment/050713/mnpTree40_ -output ~/Documents/myexperiment/050713/mnp_trans40_
+########### SCRIPT ########### SCRIPT ############ SCRIPT ##########
+#                                                                  #
+#  NiuTrans Syntax Decoding (version 1.0.0 Beta) --www.nlplab.com  #
+#                                                                  #
+########### SCRIPT ########### SCRIPT ############ SCRIPT ##########
+../bin/NiuTrans.Decoder -decoding /home/xj/Documents/myexperiment/050713/mnpTree40_ -config ../work/NiuTrans.syntax.t2s.user.config -output /home/xj/Documents/myexperiment/050713/mnp_trans40_ -scfg -outputoov 1 -nbest 1 -nthread 4 -syntax -tree2string -treeparsing -replacefoctoid 1 
+Running: ../bin/NiuTrans.Decoder -decoding /home/xj/Documents/myexperiment/050713/mnpTree40_ -config ../work/NiuTrans.syntax.t2s.user.config -output /home/xj/Documents/myexperiment/050713/mnp_trans40_ -scfg -outputoov 1 -nbest 1 -nthread 4 -syntax -tree2string -treeparsing -replacefoctoid 1 
+
+#####################################################################
+#   Welcome to NiuTrans' world (version 1.0)  --   www.nlplab.com   #
+#####################################################################
+
+Loading system settings
+  >> From command-line ...
+  >> From File: ../work/NiuTrans.syntax.t2s.user.config ...
+Done [0.00 sec(s)]
+Loading Punctuations
+  >> From File: ../resource/punct.utf8.txt ...
+  >> #
+Done [8 entries, 0.013 sec(s)]
+Loading Ngram-LanguageModel-File
+  >> From File: ../work/lm/lm.trie.data ...
+  >> 
+Done [0.086 sec(s)]
+Loading Target-Vocab-File
+  >> From File: ../work/lm/lm.vocab ...
+  >> .
+Done [35028 entries, 0.018 sec(s)]
+Loading SCFG-Rule-Set
+  >> From File: ../work/model.syntax.t2s/syntax.tree2string.rule.bina ...
+  >> ..
+Done [993K entries, 1K invalid rules, 481MB memory, 7.679 sec(s)]
+Sorting rules ... [333K entries, done]
+sentence 302 thread 1 [elapsed: 5.28s, speed: 57.19sent/s, failure: 0] 
+dumping the decoding results ... [done]
+
+real  0m16.482s
+user  0m23.812s
+sys 0m3.436s
+xj@xj-BIT:~/NiuTrans_1.2.0.Beta/scripts$ 
+
+##
+## decode skeleton
+##
+
+xj@xj-BIT:~/NiuTrans_1.2.0.Beta/scripts$ time perl NiuTrans-syntax-decoder-model.pl -model t2s -config ../work/NiuTrans.syntax.t2s.user.config -test ~/Documents/myexperiment/050713/skeletonTree0_20 -output ~/Documents/myexperiment/050713/skeleton_trans0_20
+########### SCRIPT ########### SCRIPT ############ SCRIPT ##########
+#                                                                  #
+#  NiuTrans Syntax Decoding (version 1.0.0 Beta) --www.nlplab.com  #
+#                                                                  #
+########### SCRIPT ########### SCRIPT ############ SCRIPT ##########
+../bin/NiuTrans.Decoder -decoding /home/xj/Documents/myexperiment/050713/skeletonTree0_20 -config ../work/NiuTrans.syntax.t2s.user.config -output /home/xj/Documents/myexperiment/050713/skeleton_trans0_20 -scfg -outputoov 1 -nbest 1 -nthread 4 -syntax -tree2string -treeparsing -replacefoctoid 1 
+Running: ../bin/NiuTrans.Decoder -decoding /home/xj/Documents/myexperiment/050713/skeletonTree0_20 -config ../work/NiuTrans.syntax.t2s.user.config -output /home/xj/Documents/myexperiment/050713/skeleton_trans0_20 -scfg -outputoov 1 -nbest 1 -nthread 4 -syntax -tree2string -treeparsing -replacefoctoid 1 
+
+#####################################################################
+#   Welcome to NiuTrans' world (version 1.0)  --   www.nlplab.com   #
+#####################################################################
+
+Loading system settings
+  >> From command-line ...
+  >> From File: ../work/NiuTrans.syntax.t2s.user.config ...
+Done [0.00 sec(s)]
+Loading Punctuations
+  >> From File: ../resource/punct.utf8.txt ...
+  >> #
+Done [8 entries, 0.006 sec(s)]
+Loading Ngram-LanguageModel-File
+  >> From File: ../work/lm/lm.trie.data ...
+  >> 
+Done [0.084 sec(s)]
+Loading Target-Vocab-File
+  >> From File: ../work/lm/lm.vocab ...
+  >> .
+Done [35028 entries, 0.018 sec(s)]
+Loading SCFG-Rule-Set
+  >> From File: ../work/model.syntax.t2s/syntax.tree2string.rule.bina ...
+  >> ..
+Done [993K entries, 1K invalid rules, 481MB memory, 7.769 sec(s)]
+Sorting rules ... [333K entries, done]
+sentence 346 thread 3 [elapsed: 2.84s, speed: 121.70sent/s, failure: 0] 
+dumping the decoding results ... [done]
+
+real  0m14.192s
+user  0m15.108s
+sys 0m3.092s
+xj@xj-BIT:~/NiuTrans_1.2.0.Beta/scripts$ 
+
+xj@xj-BIT:~/NiuTrans_1.2.0.Beta/scripts$ time perl NiuTrans-syntax-decoder-model.pl -model t2s -config ../work/NiuTrans.syntax.t2s.user.config -test ~/Documents/myexperiment/050713/skeletonTree20_40 -output ~/Documents/myexperiment/050713/skeleton_trans20_40
+########### SCRIPT ########### SCRIPT ############ SCRIPT ##########
+#                                                                  #
+#  NiuTrans Syntax Decoding (version 1.0.0 Beta) --www.nlplab.com  #
+#                                                                  #
+########### SCRIPT ########### SCRIPT ############ SCRIPT ##########
+../bin/NiuTrans.Decoder -decoding /home/xj/Documents/myexperiment/050713/skeletonTree20_40 -config ../work/NiuTrans.syntax.t2s.user.config -output /home/xj/Documents/myexperiment/050713/skeleton_trans20_40 -scfg -outputoov 1 -nbest 1 -nthread 4 -syntax -tree2string -treeparsing -replacefoctoid 1 
+Running: ../bin/NiuTrans.Decoder -decoding /home/xj/Documents/myexperiment/050713/skeletonTree20_40 -config ../work/NiuTrans.syntax.t2s.user.config -output /home/xj/Documents/myexperiment/050713/skeleton_trans20_40 -scfg -outputoov 1 -nbest 1 -nthread 4 -syntax -tree2string -treeparsing -replacefoctoid 1 
+
+#####################################################################
+#   Welcome to NiuTrans' world (version 1.0)  --   www.nlplab.com   #
+#####################################################################
+
+Loading system settings
+  >> From command-line ...
+  >> From File: ../work/NiuTrans.syntax.t2s.user.config ...
+Done [0.00 sec(s)]
+Loading Punctuations
+  >> From File: ../resource/punct.utf8.txt ...
+  >> #
+Done [8 entries, 0.000 sec(s)]
+Loading Ngram-LanguageModel-File
+  >> From File: ../work/lm/lm.trie.data ...
+  >> 
+Done [0.064 sec(s)]
+Loading Target-Vocab-File
+  >> From File: ../work/lm/lm.vocab ...
+  >> .
+Done [35028 entries, 0.017 sec(s)]
+Loading SCFG-Rule-Set
+  >> From File: ../work/model.syntax.t2s/syntax.tree2string.rule.bina ...
+  >> ..
+Done [993K entries, 1K invalid rules, 481MB memory, 7.570 sec(s)]
+Sorting rules ... [333K entries, done]
+sentence 511 thread 1 [elapsed: 6.24s, speed: 81.86sent/s, failure: 0] 
+dumping the decoding results ... [done]
+
+real  0m17.306s
+user  0m26.108s
+sys 0m3.272s
+xj@xj-BIT:~/NiuTrans_1.2.0.Beta/scripts$ 
+
+xj@xj-BIT:~/NiuTrans_1.2.0.Beta/scripts$ time perl NiuTrans-syntax-decoder-model.pl -model t2s -config ../work/NiuTrans.syntax.t2s.user.config -test ~/Documents/myexperiment/050713/skeletonTree40_ -output ~/Documents/myexperiment/050713/skeleton_trans40_
+########### SCRIPT ########### SCRIPT ############ SCRIPT ##########
+#                                                                  #
+#  NiuTrans Syntax Decoding (version 1.0.0 Beta) --www.nlplab.com  #
+#                                                                  #
+########### SCRIPT ########### SCRIPT ############ SCRIPT ##########
+../bin/NiuTrans.Decoder -decoding /home/xj/Documents/myexperiment/050713/skeletonTree40_ -config ../work/NiuTrans.syntax.t2s.user.config -output /home/xj/Documents/myexperiment/050713/skeleton_trans40_ -scfg -outputoov 1 -nbest 1 -nthread 4 -syntax -tree2string -treeparsing -replacefoctoid 1 
+Running: ../bin/NiuTrans.Decoder -decoding /home/xj/Documents/myexperiment/050713/skeletonTree40_ -config ../work/NiuTrans.syntax.t2s.user.config -output /home/xj/Documents/myexperiment/050713/skeleton_trans40_ -scfg -outputoov 1 -nbest 1 -nthread 4 -syntax -tree2string -treeparsing -replacefoctoid 1 
+
+#####################################################################
+#   Welcome to NiuTrans' world (version 1.0)  --   www.nlplab.com   #
+#####################################################################
+
+Loading system settings
+  >> From command-line ...
+  >> From File: ../work/NiuTrans.syntax.t2s.user.config ...
+Done [0.00 sec(s)]
+Loading Punctuations
+  >> From File: ../resource/punct.utf8.txt ...
+  >> #
+Done [8 entries, 0.000 sec(s)]
+Loading Ngram-LanguageModel-File
+  >> From File: ../work/lm/lm.trie.data ...
+  >> 
+Done [0.064 sec(s)]
+Loading Target-Vocab-File
+  >> From File: ../work/lm/lm.vocab ...
+  >> .
+Done [35028 entries, 0.017 sec(s)]
+Loading SCFG-Rule-Set
+  >> From File: ../work/model.syntax.t2s/syntax.tree2string.rule.bina ...
+  >> ..
+Done [993K entries, 1K invalid rules, 481MB memory, 7.617 sec(s)]
+Sorting rules ... [333K entries, done]
+sentence 81 thread 0 [elapsed: 2.66s, speed: 30.51sent/s, failure: 0] 
+dumping the decoding results ... [done]
+
+real  0m13.762s
+user  0m13.468s
+sys 0m3.204s
+xj@xj-BIT:~/NiuTrans_1.2.0.Beta/scripts$ 

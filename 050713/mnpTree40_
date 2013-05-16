@@ -300,6 +300,3 @@
 份额 油 在 石油 引进 中 的 比例 . ||||  |||| ( (NP (NP (NP (NN 份额) (NN 油)) (NP-M (DNP (PP (P 在) (LCP (NP (NN 石油) (NN 引进)) (LC 中))) (DEG 的)) (NP (NN 比例)))) (NP (PU .))))
 靖 国 神社 内 所有 与 那场 侵略战争 相关 的 说法 都是 " 大 东亚 战争 " , 甚至 妄称 " 大 东亚 战争 " ||||  |||| ( (NP (NP (NP (NP (NP (LCP (NP (NP (ADJP (JJ 靖)) (NP (NN 国))) (NP (NN 神社))) (LC 内)) (NP-M (DP (DT 所有)) (NP-M (CP (IP (VP (PP (P 与) (NP (NN 那场) (NN 侵略战争))) (VP (VA 相关)))) (DEC 的)) (NP (NN 说法))))) (NP (NR 都是) (PU "))) (NP-M (ADJP (JJ 大)) (NP-M (NP (NR 东亚)) (NP (NN 战争))))) (NP-M (NP (NP (PU ") (PU ,)) (NP (ADVP (AD 甚至)) (NP (NR 妄称) (PU ")))) (NP-M (ADJP (JJ 大)) (NP-M (NP (NR 东亚)) (NP (NN 战争)))))) (NP (PU "))))
 日本 军队 从 白人 的 统治 下 解放 亚洲 国家 的 " 圣战 " . ||||  |||| ( (NP (CP (IP (NP (NP (NR 日本)) (NP (NN 军队))) (VP (PP (P 从) (LCP (NP (DNP (NP (NN 白人)) (DEG 的)) (NP (NN 统治))) (LC 下))) (VP (VV 解放) (NP (NP (NR 亚洲)) (NP (NN 国家)))))) (DEC 的)) (NP (PU ") (NP-M (NR 圣战) (NP-M (PU ") (PU .))))))
-Totally 302 phrases
-Before extraction, 45.77777777777778 words per sentence.
-After extraction, 16.19753086419753 words per sentence.

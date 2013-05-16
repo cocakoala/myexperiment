@@ -1376,6 +1376,3 @@
 传统 的 实业 投资 , ||||  |||| ( (NP (DNP (ADJP (JJ 传统)) (DEG 的)) (NP (NN 实业) (NP-M (NN 投资) (PU ,)))))
 风险 投资 基金 ||||  |||| ( (NP (NN 风险) (NP-M (NN 投资) (NN 基金))))
 某些 调整 , 某些 方面 变得 较为 务实 一些 . ||||  |||| ( (NP (DP (DT 某些)) (NP-M (CP (IP (VP (VV 调整) (VP-M (NP (NP (PU ,)) (NP-M (DP (DT 某些)) (NP (NN 方面)))) (IP (VP (VV 变得) (IP (VP (ADVP (AD 较为)) (VP (VA 务实)))))))))) (NP-M (QP (CD 一些)) (NP (PU .))))))
-Totally 1378 phrases
-Before extraction, 28.189823874755383 words per sentence.
-After extraction, 10.921722113502936 words per sentence.
