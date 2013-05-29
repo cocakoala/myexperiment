@@ -46,6 +46,8 @@ public class ExtractBiChunks {
 			int[] chnIdx = new int[60], alnIdx = new int[60];
 			List<Integer> chnChkIdx = new ArrayList<Integer>();
 			List<Integer> alnChkIdx = new ArrayList<Integer>();
+			List<Integer> nullIdx = new ArrayList<Integer>();
+			nullIdx.add(-1);
 			while ( ( align = brAln.readLine() ) != null ) {
 				chn = brChn.readLine();
 				String[] chnAry = chn.split(" ");
@@ -81,13 +83,15 @@ public class ExtractBiChunks {
 					} else {
 						chnChkIdx.add( chnIdx[Integer.parseInt( chunkInfoAry[0] )] );
 						alnChkIdx.add( alnIdx[Integer.parseInt( chunkInfoAry[0] )] );
-						engChunk.append( chunkInfoAry[2] + " " );
+						engChunk.append( chunkInfoAry[2].replaceAll( "COMMA", "," ) + " " );
 						if ( chunkInfoAry[1].startsWith("E") ) {	// end of a chunk
+							chnChkIdx.removeAll(nullIdx);
+							alnChkIdx.removeAll(nullIdx);
 							Collections.sort(chnChkIdx);
 							Collections.sort(alnChkIdx);
 							if ( isAlignConsecutive( alnChkIdx ) ) {
 								chnChunk = new StringBuilder();
-								for ( int i = chnChkIdx.get(0); i < chnChkIdx.get( chnChkIdx.size() - 1 ); i++ ) {
+								for ( int i = chnChkIdx.get(0); i <= chnChkIdx.get( chnChkIdx.size() - 1 ); i++ ) {
 									chnChunk.append( chnAry[i] + " " );
 								}
 								// TODO write chunk to file
@@ -116,7 +120,7 @@ public class ExtractBiChunks {
 	 * @return
 	 */
 	public boolean isAlignConsecutive( List<Integer> list ) {
-		return ( list.size() == ( list.get( list.size()-1 ) - list.get(0) ) );
+		return list.size() > 0 && ( list.size() == ( list.get( list.size()-1 ) - list.get(0) + 1) );
 	}
 
 }
