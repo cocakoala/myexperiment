@@ -61,3 +61,61 @@ real	1m44.923s
 user	1m53.360s
 sys	0m0.520s
 xj@xj-BIT:~/Documents/myexperiment/050713$ 
+
+##
+## Time for load the grammar file (estimated by time for parsing a blank line)
+##
+
+xj@xj-BIT:~/Documents/myexperiment/050713$ time java -jar BerkeleyParser-1.7.jar -gr chn_sm5.gr -inputFile blank -outputFile blank.parse
+
+real	0m7.821s
+user	0m11.632s
+sys	0m0.300s
+xj@xj-BIT:~/Documents/myexperiment/050713$ time java -jar BerkeleyParser-1.7.jar -gr chn_sm5.gr -inputFile blank -outputFile blank.parse
+
+real	0m7.689s
+user	0m11.332s
+sys	0m0.340s
+xj@xj-BIT:~/Documents/myexperiment/050713$ time java -jar BerkeleyParser-1.7.jar -gr chn_sm5.gr -inputFile blank -outputFile blank.parse
+
+real	0m7.772s
+user	0m11.740s
+sys	0m0.344s
+xj@xj-BIT:~/Documents/myexperiment/050713$ time java -jar BerkeleyParser-1.7.jar -gr chn_sm5.gr -inputFile blank -outputFile blank.parse
+
+real	0m7.593s
+user	0m11.368s
+sys	0m0.336s
+xj@xj-BIT:~/Documents/myexperiment/050713$ time java -jar BerkeleyParser-1.7.jar -gr chn_sm5.gr -inputFile blank -outputFile blank.parse
+
+real	0m7.562s
+user	0m11.140s
+sys	0m0.376s
+xj@xj-BIT:~/Documents/myexperiment/050713$ time java -jar BerkeleyParser-1.7.jar -gr chn_sm5.gr -inputFile blank -outputFile blank.parse
+
+real	0m7.632s
+user	0m11.256s
+sys	0m0.364s
+xj@xj-BIT:~/Documents/myexperiment/050713$ time java -jar BerkeleyParser-1.7.jar -gr chn_sm5.gr -inputFile blank -outputFile blank.parse
+
+real	0m7.742s
+user	0m11.344s
+sys	0m0.360s
+xj@xj-BIT:~/Documents/myexperiment/050713$ time java -jar BerkeleyParser-1.7.jar -gr chn_sm5.gr -inputFile blank -outputFile blank.parse
+
+real	0m7.699s
+user	0m11.300s
+sys	0m0.372s
+xj@xj-BIT:~/Documents/myexperiment/050713$ time java -jar BerkeleyParser-1.7.jar -gr chn_sm5.gr -inputFile blank -outputFile blank.parse
+
+real	0m7.718s
+user	0m11.480s
+sys	0m0.364s
+xj@xj-BIT:~/Documents/myexperiment/050713$ time java -jar BerkeleyParser-1.7.jar -gr chn_sm5.gr -inputFile blank -outputFile blank.parse
+
+real	0m7.640s
+user	0m11.228s
+sys	0m0.416s
+
+11.632 11.332 11.740 11.368 11.140 11.256 11.344 11.300 11.480 11.228
+10次平均值为11.382
