@@ -4,9 +4,11 @@
 package xj;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -18,11 +20,11 @@ import java.util.List;
  */
 public class ExtractBiChunks {
 
-	public String chunkingPath = "/home/xj/Documents/myexperiment/chunk-concerned/english.chunking.with-s.head1000";
-	public String alignPath = "/home/xj/Documents/myexperiment/chunk-concerned/Alignment.kickbracket.head1000";
-	public String chnPath = "/home/xj/Documents/myexperiment/chunk-concerned/chinese.kickbracket.head1000";
-	public String engChunkPath = "/home/xj/Documents/myexperiment/chunk-concerned/chnChunk";
-	public String chnChunkPath = "/home/xj/Documents/myexperiment/chunk-concerned/engChunk";
+	public String chunkingPath = "/home/xj/Documents/experiment/052413/english.chunking";
+	public String alignPath = "/home/xj/Documents/experiment/052413/Alignment.kickbracket";
+	public String chnPath = "/home/xj/Documents/experiment/052413/chinese.kickbracket";
+	public String chnChunkPath = "/home/xj/Documents/myexperiment/chunk-concerned/chnChunk";
+	public String engChunkPath = "/home/xj/Documents/myexperiment/chunk-concerned/engChunk";
 	public String chkAlnPath = "/home/xj/Documents/myexperiment/chunk-concerned/chunkAlign";
 	
 	/**
@@ -37,10 +39,18 @@ public class ExtractBiChunks {
 		BufferedReader brAln = null;
 		BufferedReader brChn = null;
 		
+		BufferedWriter bwChnChunk = null;
+		BufferedWriter bwEngChunk = null;
+		BufferedWriter bwAln = null;
+		
 		try {
 			brChk = new BufferedReader(new FileReader(new File(chunkingPath)));
 			brAln = new BufferedReader(new FileReader(new File(alignPath)));
 			brChn = new BufferedReader(new FileReader(new File(chnPath)));
+			
+			bwChnChunk = new BufferedWriter(new FileWriter(new File(chnChunkPath)));
+			bwEngChunk = new BufferedWriter(new FileWriter(new File(engChunkPath)));
+			bwAln = new BufferedWriter(new FileWriter(new File(chkAlnPath)));
 			
 			String align = null, chn = null;
 			int[] chnIdx = new int[60], alnIdx = new int[60];
@@ -72,7 +82,9 @@ public class ExtractBiChunks {
 				chnChkIdx.clear(); alnChkIdx.clear();
 				StringBuilder chnChunk = new StringBuilder();
 				StringBuilder engChunk = new StringBuilder();
-				int engPos, chnPos;
+				int engPos;
+				engPosList.clear(); chnPosList.clear(); 
+				chnChkIdx.clear(); alnChkIdx.clear();
 				while ( ( chunkInfo = brChk.readLine() ) != null ) {
 					
 					if ( chunkInfo.length() < 1 )
@@ -83,33 +95,44 @@ public class ExtractBiChunks {
 					if ( chunkInfoAry[1].startsWith("O") || 
 						 chunkInfoAry[1].startsWith("C") ) {
 						continue;
-					} else {
+					} else /*if ( chunkInfoAry[1].startsWith("B") || 
+							 	chunkInfoAry[1].startsWith("I") || 
+							 	chunkInfoAry[1].startsWith("E") )*/ {
 						engPos = Integer.parseInt( chunkInfoAry[0] );
 						chnChkIdx.add( chnIdx[engPos] );
-						alnChkIdx.add( alnIdx[Integer.parseInt( chunkInfoAry[0] )] );
+						alnChkIdx.add( alnIdx[engPos] );
 						engPosList.add( engPos );
 						chnPosList.add( chnIdx[engPos] );
 						engChunk.append( chunkInfoAry[2].replaceAll( "COMMA", "," ) + " " );
 						if ( chunkInfoAry[1].startsWith("E") ) {	// end of a chunk
 							chnChkIdx.removeAll(nullIdx);
-							alnChkIdx.removeAll(nullIdx);
+							// TODO do unique
 							Collections.sort(chnChkIdx);
 							Collections.sort(alnChkIdx);
+							Collections.sort(engPosList);
+							Collections.sort(chnPosList);
 							if ( isAlignConsecutive( alnChkIdx ) ) {
 								chnChunk = new StringBuilder();
 								for ( int i = chnChkIdx.get(0); i <= chnChkIdx.get( chnChkIdx.size() - 1 ); i++ ) {
 									chnChunk.append( chnAry[i] + " " );
 								}
-								// TODO write chunk to file
-								System.out.println(chnChunk + " -- " + engChunk);
+								// write chunk to file
+//								System.out.println(chnChunk + " -- " + engChunk);
+								bwEngChunk.write( engChunk + "\n" );
+								bwChnChunk.write( chnChunk + "\n" );
 								int chnStart = minPositive( chnPosList );
-								for (int i = 0; i < engPosList.size(); i++ ) {
+//								if ( chnPosList.get( chnPosList.size() - 1 ) - chnStart > 10 ) {
+//									System.err.println( chnPosList.size() + " " +  engChunk + " -- " + chnChunk + " -- " + chnPosList.get( chnPosList.size() - 1 ) + "-" + chnStart );
+//								}
+								for (int i = 0; i < chnPosList.size(); i++ ) {
 									if ( chnPosList.get(i) >= 0 ) {
-										System.out.print( ( engPosList.get(i) - engPosList.get(0) ) + "-" 
-														+ (	chnPosList.get(i) - chnStart ) + " ");
+//										System.out.print( ( engPosList.get(i) - engPosList.get(0) ) + "-" 
+//														+ (	chnPosList.get(i) - chnStart ) + " ");
+										bwAln.write( ( chnPosList.get(i) - chnStart ) + "-"  + ( engPosList.get(i) - engPosList.get(0) ) + " " );
 									}
 								}
-								System.out.println();
+//								System.out.println();
+								bwAln.write("\n");
 							}
 							chnChunk.delete( 0, chnChunk.length() );
 							engChunk.delete( 0, engChunk.length() );
@@ -124,7 +147,13 @@ public class ExtractBiChunks {
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
-			
+			try {
+				bwAln.close();
+				bwChnChunk.close();
+				bwEngChunk.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 		
 	}
@@ -139,6 +168,11 @@ public class ExtractBiChunks {
 				( list.size() == ( list.get( list.size()-1 ) - list.get(0) + 1) );
 	}
 
+	/**
+	 * 
+	 * @param lst
+	 * @return
+	 */
 	public int minPositive( List<Integer> lst ) {
 		int min = Integer.MAX_VALUE, tmp;
 		for (int i = 0; i < lst.size(); i++ ) {
