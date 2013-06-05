@@ -12,7 +12,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @author xj
@@ -54,12 +56,13 @@ public class ExtractBiChunks {
 			
 			String align = null, chn = null;
 			int[] chnIdx = new int[60], alnIdx = new int[60];
-			List<Integer> chnChkIdx = new ArrayList<Integer>();
-			List<Integer> alnChkIdx = new ArrayList<Integer>();
-			List<Integer> nullIdx = new ArrayList<Integer>();
-			List<Integer> engPosList = new ArrayList<Integer>();
-			List<Integer> chnPosList = new ArrayList<Integer>();
+			List<Integer> chnChkIdx = new ArrayList<Integer>();		// store indices of chn words in chn sentences, duplicate elems and -1 will be removed
+			List<Integer> alnChkIdx = new ArrayList<Integer>();		// store indices of alignments 
+			List<Integer> nullIdx = new ArrayList<Integer>();		// store -1, which is used in removeAll()
 			nullIdx.add(-1);
+			List<Integer> engPosList = new ArrayList<Integer>();	// store indices of eng words in eng sentences 
+			List<Integer> chnPosList = new ArrayList<Integer>();	// store indices of chn words 
+			Set<Integer> chnChkIdxSet = new HashSet<Integer>();		// 
 			while ( ( align = brAln.readLine() ) != null ) {
 				chn = brChn.readLine();
 				String[] chnAry = chn.split(" ");
@@ -99,18 +102,29 @@ public class ExtractBiChunks {
 							 	chunkInfoAry[1].startsWith("I") || 
 							 	chunkInfoAry[1].startsWith("E") )*/ {
 						engPos = Integer.parseInt( chunkInfoAry[0] );
-						chnChkIdx.add( chnIdx[engPos] );
+						chnChkIdxSet.add( chnIdx[engPos] );
+//						chnChkIdx.add( chnIdx[engPos] );
 						alnChkIdx.add( alnIdx[engPos] );
 						engPosList.add( engPos );
 						chnPosList.add( chnIdx[engPos] );
 						engChunk.append( chunkInfoAry[2].replaceAll( "COMMA", "," ) + " " );
 						if ( chunkInfoAry[1].startsWith("E") ) {	// end of a chunk
+							// remove -1
 							chnChkIdx.removeAll(nullIdx);
-							// TODO do unique
+							
+							// remove duplicate elements
+							chnChkIdxSet.clear();
+							chnChkIdxSet.addAll( chnChkIdx );
+							chnChkIdx.clear();
+							chnChkIdx.addAll(chnChkIdxSet);
+							
+							// sort indices 
 							Collections.sort(chnChkIdx);
 							Collections.sort(alnChkIdx);
 							Collections.sort(engPosList);
 							Collections.sort(chnPosList);
+							
+							// if this is a chunk, extract it and write it to file
 							if ( isAlignConsecutive( alnChkIdx ) ) {
 								chnChunk = new StringBuilder();
 								for ( int i = chnChkIdx.get(0); i <= chnChkIdx.get( chnChkIdx.size() - 1 ); i++ ) {
