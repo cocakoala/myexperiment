@@ -56,13 +56,12 @@ public class ExtractBiChunks {
 			
 			String align = null, chn = null;
 			int[] chnIdx = new int[60], alnIdx = new int[60];
-			List<Integer> chnChkIdx = new ArrayList<Integer>();		// store indices of chn words in chn sentences, duplicate elems and -1 will be removed
+			List<Integer> chnChkIdx = new ArrayList<Integer>();		// store indices of chn words in chn sentences, -1 will be removed
 			List<Integer> alnChkIdx = new ArrayList<Integer>();		// store indices of alignments 
 			List<Integer> nullIdx = new ArrayList<Integer>();		// store -1, which is used in removeAll()
 			nullIdx.add(-1);
 			List<Integer> engPosList = new ArrayList<Integer>();	// store indices of eng words in eng sentences 
 			List<Integer> chnPosList = new ArrayList<Integer>();	// store indices of chn words 
-			Set<Integer> chnChkIdxSet = new HashSet<Integer>();		// 
 			while ( ( align = brAln.readLine() ) != null ) {
 				chn = brChn.readLine();
 				String[] chnAry = chn.split(" ");
@@ -86,8 +85,8 @@ public class ExtractBiChunks {
 				StringBuilder chnChunk = new StringBuilder();
 				StringBuilder engChunk = new StringBuilder();
 				int engPos;
-				engPosList.clear(); chnPosList.clear(); 
-				chnChkIdx.clear(); alnChkIdx.clear();
+//				engPosList.clear(); chnPosList.clear(); 
+//				chnChkIdx.clear(); alnChkIdx.clear();
 				while ( ( chunkInfo = brChk.readLine() ) != null ) {
 					
 					if ( chunkInfo.length() < 1 )
@@ -98,11 +97,17 @@ public class ExtractBiChunks {
 					if ( chunkInfoAry[1].startsWith("O") || 
 						 chunkInfoAry[1].startsWith("C") ) {
 						continue;
-					} else /*if ( chunkInfoAry[1].startsWith("B") || 
-							 	chunkInfoAry[1].startsWith("I") || 
-							 	chunkInfoAry[1].startsWith("E") )*/ {
+					} else {
+						// begin of a chunk
+						if ( chunkInfoAry[1].startsWith("B") ) {
+							chnChunk.delete( 0, chnChunk.length() );
+							engChunk.delete( 0, engChunk.length() );
+							engPosList.clear(); chnPosList.clear(); 
+							chnChkIdx.clear(); alnChkIdx.clear();
+						}
+						
 						engPos = Integer.parseInt( chunkInfoAry[0] );
-						chnChkIdxSet.add( chnIdx[engPos] );
+						chnChkIdx.add( chnIdx[engPos] );
 //						chnChkIdx.add( chnIdx[engPos] );
 						alnChkIdx.add( alnIdx[engPos] );
 						engPosList.add( engPos );
@@ -111,47 +116,35 @@ public class ExtractBiChunks {
 						if ( chunkInfoAry[1].startsWith("E") ) {	// end of a chunk
 							// remove -1
 							chnChkIdx.removeAll(nullIdx);
-							
-							// remove duplicate elements
-							chnChkIdxSet.clear();
-							chnChkIdxSet.addAll( chnChkIdx );
-							chnChkIdx.clear();
-							chnChkIdx.addAll(chnChkIdxSet);
-							
+
 							// sort indices 
 							Collections.sort(chnChkIdx);
 							Collections.sort(alnChkIdx);
 							Collections.sort(engPosList);
 							Collections.sort(chnPosList);
 							
-							// if this is a chunk, extract it and write it to file
+							// if this IS a chunk, extract it and write it to file
 							if ( isAlignConsecutive( alnChkIdx ) ) {
 								chnChunk = new StringBuilder();
 								for ( int i = chnChkIdx.get(0); i <= chnChkIdx.get( chnChkIdx.size() - 1 ); i++ ) {
 									chnChunk.append( chnAry[i] + " " );
 								}
+								
 								// write chunk to file
-//								System.out.println(chnChunk + " -- " + engChunk);
 								bwEngChunk.write( engChunk + "\n" );
 								bwChnChunk.write( chnChunk + "\n" );
+								
+								// write alignment to file
 								int chnStart = minPositive( chnPosList );
-//								if ( chnPosList.get( chnPosList.size() - 1 ) - chnStart > 10 ) {
-//									System.err.println( chnPosList.size() + " " +  engChunk + " -- " + chnChunk + " -- " + chnPosList.get( chnPosList.size() - 1 ) + "-" + chnStart );
-//								}
 								for (int i = 0; i < chnPosList.size(); i++ ) {
 									if ( chnPosList.get(i) >= 0 ) {
-//										System.out.print( ( engPosList.get(i) - engPosList.get(0) ) + "-" 
-//														+ (	chnPosList.get(i) - chnStart ) + " ");
 										bwAln.write( ( chnPosList.get(i) - chnStart ) + "-"  + ( engPosList.get(i) - engPosList.get(0) ) + " " );
 									}
 								}
-//								System.out.println();
 								bwAln.write("\n");
+								
 							}
-							chnChunk.delete( 0, chnChunk.length() );
-							engChunk.delete( 0, engChunk.length() );
-							engPosList.clear(); chnPosList.clear(); 
-							chnChkIdx.clear(); alnChkIdx.clear();
+
 						}
 					}
 				}
