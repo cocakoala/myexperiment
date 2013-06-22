@@ -22,12 +22,12 @@ import java.util.Set;
  */
 public class ExtractBiChunks {
 
-	public String chunkingPath = "/home/xj/Documents/experiment/052413/english.chunking";
-	public String alignPath = "/home/xj/Documents/experiment/052413/Alignment.kickbracket";
-	public String chnPath = "/home/xj/Documents/experiment/052413/chinese.kickbracket";
-	public String chnChunkPath = "/home/xj/Documents/myexperiment/chunk-concerned/chnChunk";
-	public String engChunkPath = "/home/xj/Documents/myexperiment/chunk-concerned/engChunk";
-	public String chkAlnPath = "/home/xj/Documents/myexperiment/chunk-concerned/chunkAlign";
+	public String chunkingPath = "/home/xj/Documents/experiment/060913/english-part2.chunking";
+	public String alignPath = "/home/xj/Documents/experiment/060913/Alignment-part2.kickbracket";
+	public String chnPath = "/home/xj/Documents/experiment/060913/chinese-part2.kickbracket";
+	public String chnChunkPath = "/home/xj/Documents/myexperiment/chunk-concerned/chnChunk-part2";
+	public String engChunkPath = "/home/xj/Documents/myexperiment/chunk-concerned/engChunk-part2";
+	public String chkAlnPath = "/home/xj/Documents/myexperiment/chunk-concerned/chunkAlign-part2";
 	
 	/**
 	 * @param args
