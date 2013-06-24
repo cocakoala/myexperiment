@@ -1,0 +1,159 @@
+xj@xj-BIT:~/NiuTrans_1.2.0.Beta/scripts$ perl NiuTrans-generate-xml-for-mteval.pl -1f ~/Documents/myexperiment/062213/input/orig_trans0_20 -tf ~/Documents/myexperiment/062213/input/ref0_20 -rnum 1
+########### SCRIPT ########### SCRIPT ############ SCRIPT ##########
+#                                                                  #
+#   NiuTrans Generate XML (version 1.0.0 Beta)  --www.nlplab.com   #
+#                                                                  #
+########### SCRIPT ########### SCRIPT ############ SCRIPT ##########
+Deal with OOV: process 346 lines.
+TST: 346
+REF AND SRC: 346
+xj@xj-BIT:~/NiuTrans_1.2.0.Beta/scripts$ perl mteval-v13a.pl -r ref.xml -s src.xml -t tst.xml MT evaluation scorer began on 2013 Jun 24 at 14:47:05
+command line:  mteval-v13a.pl -r ref.xml -s src.xml -t tst.xml
+  Evaluation of Chinese-to-English translation using:
+    src set "NiuTrans_example_set" (1 docs, 346 segs)
+    ref set "NiuTrans_example_set" (1 refs)
+    tst set "NiuTrans_example_set" (1 systems)
+
+NIST score = 5.7544  BLEU score = 0.2234 for system "NiuTrans"
+
+# ------------------------------------------------------------------------
+
+Individual N-gram scoring
+        1-gram   2-gram   3-gram   4-gram   5-gram   6-gram   7-gram   8-gram   9-gram
+        ------   ------   ------   ------   ------   ------   ------   ------   ------
+ NIST:  4.7037   0.9023   0.1262   0.0180   0.0042   0.0009   0.0002   0.0000   0.0000  "NiuTrans"
+
+ BLEU:  0.5806   0.2983   0.1713   0.1041   0.0635   0.0393   0.0263   0.0175   0.0124  "NiuTrans"
+
+# ------------------------------------------------------------------------
+Cumulative N-gram scoring
+        1-gram   2-gram   3-gram   4-gram   5-gram   6-gram   7-gram   8-gram   9-gram
+        ------   ------   ------   ------   ------   ------   ------   ------   ------
+ NIST:  4.7037   5.6060   5.7321   5.7501   5.7544   5.7552   5.7555   5.7555   5.7555  "NiuTrans"
+
+ BLEU:  0.5502   0.3944   0.2934   0.2234   0.1719   0.1332   0.1048   0.0833   0.0670  "NiuTrans"
+MT evaluation scorer ended on 2013 Jun 24 at 14:47:07
+xj@xj-BIT:~/NiuTrans_1.2.0.Beta/scripts$ 
+
+===============================================================================================================================================
+===============================================================================================================================================
+===============================================================================================================================================
+
+xj@xj-BIT:~/NiuTrans_1.2.0.Beta/scripts$ perl NiuTrans-generate-xml-for-mteval.pl -1f ~/Documents/myexperiment/062213/input/orig_trans20_40 -tf ~/Documents/myexperiment/062213/input/ref20_40 -rnum 1
+########### SCRIPT ########### SCRIPT ############ SCRIPT ##########
+#                                                                  #
+#   NiuTrans Generate XML (version 1.0.0 Beta)  --www.nlplab.com   #
+#                                                                  #
+########### SCRIPT ########### SCRIPT ############ SCRIPT ##########
+Deal with OOV: process 511 lines.
+TST: 511
+REF AND SRC: 511
+xj@xj-BIT:~/NiuTrans_1.2.0.Beta/scripts$ perl mteval-v13a.pl -r ref.xml -s src.xml -t tst.xml MT evaluation scorer began on 2013 Jun 24 at 14:46:10
+command line:  mteval-v13a.pl -r ref.xml -s src.xml -t tst.xml
+  Evaluation of Chinese-to-English translation using:
+    src set "NiuTrans_example_set" (1 docs, 511 segs)
+    ref set "NiuTrans_example_set" (1 refs)
+    tst set "NiuTrans_example_set" (1 systems)
+
+NIST score = 6.1542  BLEU score = 0.2277 for system "NiuTrans"
+
+# ------------------------------------------------------------------------
+
+Individual N-gram scoring
+        1-gram   2-gram   3-gram   4-gram   5-gram   6-gram   7-gram   8-gram   9-gram
+        ------   ------   ------   ------   ------   ------   ------   ------   ------
+ NIST:  4.8004   1.1051   0.2042   0.0361   0.0084   0.0023   0.0005   0.0002   0.0000  "NiuTrans"
+
+ BLEU:  0.5825   0.2925   0.1663   0.0976   0.0572   0.0331   0.0192   0.0106   0.0060  "NiuTrans"
+
+# ------------------------------------------------------------------------
+Cumulative N-gram scoring
+        1-gram   2-gram   3-gram   4-gram   5-gram   6-gram   7-gram   8-gram   9-gram
+        ------   ------   ------   ------   ------   ------   ------   ------   ------
+ NIST:  4.8004   5.9055   6.1097   6.1459   6.1542   6.1566   6.1571   6.1573   6.1573  "NiuTrans"
+
+ BLEU:  0.5783   0.4098   0.3027   0.2277   0.1725   0.1308   0.0993   0.0750   0.0566  "NiuTrans"
+MT evaluation scorer ended on 2013 Jun 24 at 14:46:16
+xj@xj-BIT:~/NiuTrans_1.2.0.Beta/scripts$ 
+
+===============================================================================================================================================
+===============================================================================================================================================
+===============================================================================================================================================
+
+xj@xj-BIT:~/NiuTrans_1.2.0.Beta/scripts$ perl NiuTrans-generate-xml-for-mteval.pl -1f ~/Documents/myexperiment/062213/input/orig_trans40_ -tf ~/Documents/myexperiment/062213/input/ref40_ -rnum 1
+########### SCRIPT ########### SCRIPT ############ SCRIPT ##########
+#                                                                  #
+#   NiuTrans Generate XML (version 1.0.0 Beta)  --www.nlplab.com   #
+#                                                                  #
+########### SCRIPT ########### SCRIPT ############ SCRIPT ##########
+Deal with OOV: process 81 lines.
+TST: 81
+REF AND SRC: 81
+xj@xj-BIT:~/NiuTrans_1.2.0.Beta/scripts$ perl mteval-v13a.pl -r ref.xml -s src.xml -t tst.xml MT evaluation scorer began on 2013 Jun 24 at 14:43:58
+command line:  mteval-v13a.pl -r ref.xml -s src.xml -t tst.xml
+  Evaluation of Chinese-to-English translation using:
+    src set "NiuTrans_example_set" (1 docs, 81 segs)
+    ref set "NiuTrans_example_set" (1 refs)
+    tst set "NiuTrans_example_set" (1 systems)
+
+NIST score = 4.9530  BLEU score = 0.1904 for system "NiuTrans"
+
+# ------------------------------------------------------------------------
+
+Individual N-gram scoring
+        1-gram   2-gram   3-gram   4-gram   5-gram   6-gram   7-gram   8-gram   9-gram
+        ------   ------   ------   ------   ------   ------   ------   ------   ------
+ NIST:  4.1296   0.7302   0.0813   0.0093   0.0027   0.0009   0.0002   0.0000   0.0000  "NiuTrans"
+
+ BLEU:  0.5274   0.2527   0.1345   0.0733   0.0386   0.0219   0.0130   0.0076   0.0043  "NiuTrans"
+
+# ------------------------------------------------------------------------
+Cumulative N-gram scoring
+        1-gram   2-gram   3-gram   4-gram   5-gram   6-gram   7-gram   8-gram   9-gram
+        ------   ------   ------   ------   ------   ------   ------   ------   ------
+ NIST:  4.1296   4.8598   4.9411   4.9504   4.9530   4.9539   4.9542   4.9542   4.9542  "NiuTrans"
+
+ BLEU:  0.5274   0.3651   0.2617   0.1904   0.1384   0.1018   0.0758   0.0569   0.0427  "NiuTrans"
+MT evaluation scorer ended on 2013 Jun 24 at 14:43:59
+xj@xj-BIT:~/NiuTrans_1.2.0.Beta/scripts$ 
+
+===================================================================================================================================
+===================================================================================================================================
+===================================================================================================================================
+
+xj@xj-BIT:~/NiuTrans_1.2.0.Beta/scripts$ perl NiuTrans-generate-xml-for-mteval.pl -1f ~/Documents/myexperiment/062213/input/orig_trans938 -tf ~/Documents/myexperiment/062213/input/ref938 -rnum 1
+########### SCRIPT ########### SCRIPT ############ SCRIPT ##########
+#                                                                  #
+#   NiuTrans Generate XML (version 1.0.0 Beta)  --www.nlplab.com   #
+#                                                                  #
+########### SCRIPT ########### SCRIPT ############ SCRIPT ##########
+Deal with OOV: process 938 lines.
+TST: 938
+REF AND SRC: 938
+xj@xj-BIT:~/NiuTrans_1.2.0.Beta/scripts$ perl mteval-v13a.pl -r ref.xml -s src.xml -t tst.xml MT evaluation scorer began on 2013 Jun 24 at 14:59:54
+command line:  mteval-v13a.pl -r ref.xml -s src.xml -t tst.xml
+  Evaluation of Chinese-to-English translation using:
+    src set "NiuTrans_example_set" (1 docs, 938 segs)
+    ref set "NiuTrans_example_set" (1 refs)
+    tst set "NiuTrans_example_set" (1 systems)
+
+NIST score = 6.2057  BLEU score = 0.2243 for system "NiuTrans"
+
+# ------------------------------------------------------------------------
+
+Individual N-gram scoring
+        1-gram   2-gram   3-gram   4-gram   5-gram   6-gram   7-gram   8-gram   9-gram
+        ------   ------   ------   ------   ------   ------   ------   ------   ------
+ NIST:  4.7847   1.1456   0.2231   0.0423   0.0099   0.0026   0.0006   0.0002   0.0000  "NiuTrans"
+
+ BLEU:  0.5734   0.2873   0.1621   0.0949   0.0552   0.0323   0.0194   0.0112   0.0067  "NiuTrans"
+
+# ------------------------------------------------------------------------
+Cumulative N-gram scoring
+        1-gram   2-gram   3-gram   4-gram   5-gram   6-gram   7-gram   8-gram   9-gram
+        ------   ------   ------   ------   ------   ------   ------   ------   ------
+ NIST:  4.7847   5.9303   6.1534   6.1957   6.2057   6.2083   6.2088   6.2090   6.2091  "NiuTrans"
+
+ BLEU:  0.5734   0.4058   0.2989   0.2243   0.1695   0.1286   0.0981   0.0748   0.0573  "NiuTrans"
+MT evaluation scorer ended on 2013 Jun 24 at 15:00:03
+xj@xj-BIT:~/NiuTrans_1.2.0.Beta/scripts$ 

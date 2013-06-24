@@ -18,9 +18,9 @@ import java.util.regex.Matcher;
  */
 public class MNPReplace {
 
-	public static final String mnpPath = "/home/xj/Documents/experiment/result/130428/Our/MNPExtracted.t2s.out.formatted";
-	public static final String skeletonPath = "/home/xj/Documents/experiment/result/130428/Our/skeleton.t2s.out";
-	public static final String outPath = "/home/xj/Documents/experiment/result/130428/Our/final.out";
+	public static final String mnpPath = "/home/xj/Documents/experiment/130624/mnp_trans40_.withBlankline";
+	public static final String skeletonPath = "/home/xj/Documents/experiment/130624/skeleton_trans40_";
+	public static final String outPath = "/home/xj/Documents/experiment/130624/our_trans40_";
 	
 	public void replace() {
 		BufferedReader brmnp = null;

@@ -158,6 +158,9 @@ public class CollectSentencesByLength {
 				bwSkeletonTree1.close();
 				bwSkeletonTree2.close();
 				bwlog.close();
+				bwRef0.close();
+				bwRef1.close();
+				bwRef2.close();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
